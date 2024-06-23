@@ -1,10 +1,11 @@
 import mongoose from 'mongoose';
 const DB_NAME="foodapp";
+const MongoURI="mongodb+srv://shivanshpathak64:shivanshdb123@cluster0.6qil9vv.mongodb.net/foodapp"
 
 
 const connectDB=async()=>{
     try {
-      const result=await  mongoose.connect(`${process.env.MongoURI}`);
+      const result=await  mongoose.connect(MongoURI);
       const fetcheddata= result.connection.db.collection("foodData");
       const data=await fetcheddata.find({}).toArray()
       if(!data){

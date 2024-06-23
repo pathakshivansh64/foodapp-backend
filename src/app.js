@@ -18,6 +18,10 @@ import displaydata from './routes/data.routes.js'
 
 app.use('/user',userrouter)
 app.use('/data',displaydata)
+app.get('/',(req,res)=>{
+    res.send("hello")
+})
+
 
 
 export {app}
